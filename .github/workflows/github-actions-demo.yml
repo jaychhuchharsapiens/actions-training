@@ -1,0 +1,24 @@
+name: GitHub Actions Demo
+
+on:
+  push:
+    branches: 
+      - main
+    paths-ignore: 
+      - .github/**
+  pull_request_target:
+    branches: 
+      - main
+  schedule:
+    - cron: "15 6 * * SUN"
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: Message
+        run: |
+          echo Hello
