@@ -22,3 +22,4 @@ jobs:
       - name: Message
         run: |
           echo Hello
+          echo ${{ github.event_name }}
